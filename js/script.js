@@ -184,10 +184,10 @@ const renderPopup = function(locArr,container){
         const loc = locArr.find(loc=>loc.id===clicked.dataset.id)
         map.setView(loc.coords,4,{
                     animate:true,
-                    pan:{duration:1}})
+                    pan:{duration:1}})        
         //make a marker at this place
         L.marker(loc.coords).addTo(map)
-        .bindPopup(L.popup({ maxWidth:300,minWidth:200,className:`${container.className}-popup`})).setPopupContent(`<img src="img/popup-${loc.id}.png" alt="${loc.id}"> <p>${loc.description}</p>`).openPopup();})
+        .bindPopup(L.popup({ maxWidth:300,minWidth:200,className:`${container.className}-popup`})).setPopupContent(`<img src="img/popup-${loc.id[0].toLowerCase()}${loc.id.slice(1)}.png" alt="${loc.id}"> <p>${loc.description}</p>`).openPopup();})
 };
 renderPopup(visitedLoc,visitedCon);
 renderPopup(travelPlan,planCon);
