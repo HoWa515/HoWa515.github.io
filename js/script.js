@@ -204,9 +204,54 @@ contact_btn.addEventListener('click',function(){
     document.querySelector('.contact-form').scrollIntoView({behavior:'smooth'})
 });
 
+//form submission
+// function sendMail(){
+//     const paras={
+//         name:document.getElementById('name').value,
+//         email:document.getElementById('email').value,
+//         topic:document.getElementById('topic').value,
+//         message:document.getElementById('message').value,
+//     }
 
 
+// const servideID = "service_as7zufn";
+// const templateID="template_7xzo9ad";
 
+// emailjs.send(servideID,templateID).then(
+//     res=>{
+//         name:document.getElementById('name').value='';
+//         email:document.getElementById('email').value='';
+//         topic:document.getElementById('topic').value='';
+//         message:document.getElementById('message').value='';
+//         console.log(res);
+//         alert('Your messages has been sent!')
+//     }
+// ).catch((err)=>console.log(err));
+// }
+
+const subBtn= document.getElementById('form');
+form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const paras={
+        name:document.getElementById('name').value,
+        email:document.getElementById('email').value,
+        topic:document.getElementById('topic').value,
+        message:document.getElementById('message').value,
+    }
+
+
+   const servideID = "service_as7zufn";
+   const templateID="template_7xzo9ad";
+
+   emailjs.send(servideID,templateID,paras).then(
+      res=>{
+        document.getElementById('name').value='';
+        document.getElementById('email').value='';
+        document.getElementById('topic').value='';
+        document.getElementById('message').value='';
+        alert('Your messages has been sent!')
+    }).catch((err)=>console.log(err));
+})
 
 
 
