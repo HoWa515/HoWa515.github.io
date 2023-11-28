@@ -249,7 +249,7 @@ form.addEventListener('submit',function(e){
         document.getElementById('email').value='';
         document.getElementById('topic').value='';
         document.getElementById('message').value='';
-        alert('Your messages has been sent!')
+        alert('Your message has been sent successfully.🎉✨')
     }).catch((err)=>console.log(err));
 })
 
