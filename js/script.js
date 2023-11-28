@@ -147,19 +147,20 @@ class Location{
     }
 }
 
+//visited loc
 const bangkok = new Location('Bangkok',[13.736717,100.523186],`Bangkok(Thailand) <br> I've been there with my family.We visited the grand palace and had a great time in Pataya beach.`);
 const taipei = new Location('Taipei',[25.105497,121.597366],`Taipei(Taiwan) <br> I love this modern costal city. The food were so delicious, and the people are also friendly!`);
 const singa = new Location('Singapore',[1.290270,103.851959],`Singapore <br> 'klein, aber fein!' I'll never forget me and my family spent days there,and suggest you travel there for at least once~!`);
 const kuala = new Location('Kuala Lumpur',[3.140853,101.693207],`Kuala Lumpur(Malaysia)<br>Not just the Petronas Twin Towers,I loved everything about malaysia,especially the climate.`);
 const fran = new Location('Frankfurt',[50.110924,8.682127],`Frankfurt(Germany)<br> I enjoyed the view of main river,and also visited Römerberg, Goethe-Haus.`);
 const bonn = new Location('Bonn',[50.733334,7.100000],`Bonn(Germany)<br> My friends and I visited there in winter,we came for the 'Schloss Drachenburg', wonderful castle!`);
-//visited loc
+//plan loc
 const sey = new Location('Seychelles',[-4.186000,55.435999],`Vallée de Mai(Seychelles)<br>It is literally the Eden Garden on earth. I have to be there someday.`);
 const dubai = new Location('Dubai',[25.276987,55.296249],`Dubai(UAE)<br> The tallest tower of the world,definitely worth a visit.You can get the view of desert and sea at the same time.`);
 const agra = new Location('Agra',[27.176670,78.008072],`Agra(India)<br> The legendary 'Taj Mahal' is attractive to me, and I also like indian culture.`);
 const cairo = new Location('Cairo',[30.033333,31.233334],`Cairo(Egypt) <br> One word:Pyramid~! `);
 const mauri = new Location('Mauritius',[-20.244959,57.561768],`Mauritius <br>Marvelous beach scenery and many rare animals.`);
-//plan loc
+// location-arr
 const visitedLoc =[bangkok, taipei, singa, kuala, fran, bonn];
 const travelPlan =[sey, dubai, agra, cairo, mauri];
 const visitedCon = document.querySelector('.visited-loc');
@@ -192,7 +193,7 @@ const renderPopup = function(locArr,container){
 renderPopup(visitedLoc,visitedCon);
 renderPopup(travelPlan,planCon);
 
-// smooth scroll
+// ****************smooth scroll
 const nav_item = document.querySelector('nav li');
 nav.addEventListener('click',function(e){    
     const secId=e.target.name;
@@ -204,31 +205,8 @@ contact_btn.addEventListener('click',function(){
     document.querySelector('.contact-form').scrollIntoView({behavior:'smooth'})
 });
 
-//form submission
-// function sendMail(){
-//     const paras={
-//         name:document.getElementById('name').value,
-//         email:document.getElementById('email').value,
-//         topic:document.getElementById('topic').value,
-//         message:document.getElementById('message').value,
-//     }
 
-
-// const servideID = "service_as7zufn";
-// const templateID="template_7xzo9ad";
-
-// emailjs.send(servideID,templateID).then(
-//     res=>{
-//         name:document.getElementById('name').value='';
-//         email:document.getElementById('email').value='';
-//         topic:document.getElementById('topic').value='';
-//         message:document.getElementById('message').value='';
-//         console.log(res);
-//         alert('Your messages has been sent!')
-//     }
-// ).catch((err)=>console.log(err));
-// }
-
+//******************Form submission
 const subBtn= document.getElementById('form');
 form.addEventListener('submit',function(e){
     e.preventDefault();
